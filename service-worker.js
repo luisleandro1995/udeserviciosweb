@@ -5,8 +5,8 @@ const assetsToCache = [
     '/style.css',
     '/script.js',
     '/service-worker.js',
-    '/images/pacman.png', // If you have images
-    '/images/ghost.png',  // If you have images
+    '/images/pacman.png', // Ensure this path is correct
+    '/images/ghost.png',  // Ensure this path is correct
 ];
 
 // Install Service Worker and cache assets
@@ -14,7 +14,7 @@ self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {
-                console.log('Archivos en cache');
+                console.log('Archivos en cache:', assetsToCache);
                 return cache.addAll(assetsToCache);
             })
     );
