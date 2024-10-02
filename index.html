@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pac-Man Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>¡Pac-Man!</h1>
+    <div id="game-area"></div>
+    <button id="start-game">Iniciar Juego</button>
+
+    <!-- Offline status banner -->
+    <div id="offline-banner" class="offline-banner hidden">
+        Fuera de linea - pero puede seguir jugando
+    </div>
+
+    <script>
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registrado con éxito:', registration);
+                })
+                .catch(error => {
+                    console.error('Error al registrar el Service Worker:', error);
+                });
+            });
+        }
+
+        // Monitor online/offline status
+        function updateOnlineStatus() {
+            const offlineBanner = document.getElementById('offline-banner');
+            if (!navigator.onLine) {
+                offlineBanner.classList.remove('hidden');
+            } else {
+                offlineBanner.classList.add('hidden');
+            }
+        }
+
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+        
+        // Initialize offline status on load
+        updateOnlineStatus();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
