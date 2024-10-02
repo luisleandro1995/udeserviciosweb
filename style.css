@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url('https://udes.edu.co/media/mod_campusudes/images/bucaramanga.jpg');
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-position: center; /* Centers the image on the page */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+
+#game-area {
+    width: 400px;
+    height: 400px;
+    background-color: black;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.pacman {
+    width: 30px;
+    height: 30px;
+    background-image: url('https://www.icegif.com/wp-content/uploads/2023/08/icegif-215.gif');
+    background-size: contain;
+    position: absolute;
+}
+
+.ghost {
+    width: 30px;
+    height: 30px;
+    background-image: url('https://w7.pngwing.com/pngs/383/819/png-transparent-pac-man-blue-ghost-illustration-pac-man-world-3-pong-video-game-pacman-blue-game-smiley-thumbnail.png');
+    background-size: contain;
+    position: absolute;
+}
+
+/* Styles for Pac-Man and game elements */
+#game-area {
+    width: 400px;
+    height: 400px;
+    background-image: url('https://images.genially.com/5c855f8b92a69452631787f9/5f734c4c-9fa9-41e0-9509-491ff087b668.png');
+    background-size: cover; /* Ensures the image covers the entire game area */
+    background-position: center; /* Centers the image */
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #000; /* Optional: to outline the game area */
+}
+
+
+.pacman, .ghost {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.pacman {
+    background-color: yellow;
+}
+
+.ghost {
+    background-color: red;
+}
+
+/* Offline banner */
+.offline-banner {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Score display */
+#score {
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+    color: #333;
+}
+
